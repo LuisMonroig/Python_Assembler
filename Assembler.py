@@ -1,8 +1,8 @@
-while True:
+if __name__ == __main__:
     instruction = input("Please enter the assembly instruction: ")
 
     mnemonic = instruction.split(" ")[0]
-    print("Mnemonic:",mnemonic)
+    print("Mnemonic:",mnemonic)                     #tracer bullet to aid development
 
     computers_ISA = {"LOD":"00010000" , "STO":"00010001",  "ADD":"00100000",
                      "SUB":"00100001",  "JMP":"00110000",  "HLT": "11111111"}
@@ -43,4 +43,3 @@ while True:
 
             machine_code = computers_ISA[mnemonic] + num_reg_binary[0] + num_reg_binary[1] + num_reg_binary[2]
             print("The translation of the assembly instruction into machine code is:", machine_code,)
-            break

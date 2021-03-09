@@ -1,1 +1,1 @@
-Simple python assembler of a subset of the MIPS ISA.
+Simple python assembler Intel 8080 architecture

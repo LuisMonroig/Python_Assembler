@@ -1,4 +1,6 @@
-if __name__ == __main__:
+
+
+if __name__ == "__main__":
     instruction = input("Please enter the assembly instruction: ")
 
     mnemonic = instruction.split(" ")[0]

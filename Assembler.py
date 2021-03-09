@@ -1,19 +1,21 @@
 
 
+regiters_8080 = {"A":,"B":, "C":, "D":, "E":, "H":, "I":,"H":,"L":}
+
 if __name__ == "__main__":
     instruction = input("Please enter the assembly instruction: ")
 
     mnemonic = instruction.split(" ")[0]
-    print("Mnemonic:",mnemonic)                     #tracer bullet to aid development
+    print("Mnemonic:",mnemonic)                     #for unit test
 
     computers_ISA = {"LOD":"00010000" , "STO":"00010001",  "ADD":"00100000",
                      "SUB":"00100001",  "JMP":"00110000",  "HLT": "11111111"}
 
     instructions_list = instruction.split(" ",1)
-    print(instructions_list)
+    print(instructions_list)                        #for unit test
 
     registers = instructions_list[1].replace(" ","")
-    print(registers)
+    print(registers)                                #for unit test
 
     register_list = registers.split(",")
 
@@ -22,8 +24,7 @@ if __name__ == "__main__":
     num_reg3 = register_list[2][1:]
 
     if mnemonic not in computers_ISA:
-        print("There was a problem with the instruction mnemonic. Please consult the ISA documentation.\n\n")
-
+        print("There was a problem with the instruction mnemonic. Please consult the ISA documentation of the Intel 8080.\n\n")
     else:
         if len(register_list) != 3:
             print("Few or to many registers! Please, try again.\n\n")

@@ -1,8 +1,13 @@
 
+#if ":" in line:
+#    return line.split(":")[0] # get_line_tag(line):
 
-regiters_8080 = {"A":,"B":, "C":, "D":, "E":, "H":, "I":,"H":,"L":}
+regiters_8080 = {"A":1,"B":1, "C":1, "D":1, "E":1, "H":1, "I":1,"H":1,"L":1}
 
 if __name__ == "__main__":
+
+    assembly_txt = open("assembly_file.txt")
+
     instruction = input("Please enter the assembly instruction: ")
 
     mnemonic = instruction.split(" ")[0]

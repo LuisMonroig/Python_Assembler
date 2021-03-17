@@ -1,0 +1,19 @@
+Multiply: PUSH PSW       ; Save registers being altered
+          PUSH BC
+
+          SUB H, H       ; Set HL (result) to 0000h
+          SUB L, L
+
+          MOV A, B 	 ; The multiplier goes in A
+          CPI A, 00h     ; If it's 0, we're finished.
+          JZ AllDone
+
+          MVI 8, 00h     ; Set high byte of BC to 0
+
+Multloop: DAD HL, BC     ; Add BC to HL
+          DEC A          ; Decrement multiplier
+          JNZ Multloop   ; Loop if it's not 0
+
+AllDone:  POP BC 	 ; Restore saved registers
+	  POP PSW
+	  RET  		 ; Return

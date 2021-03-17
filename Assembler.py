@@ -8,7 +8,7 @@ regiters_8080 = {"A":,"B":, "C":, "D":, "E":, "H":, "I":,"H":,"L":}
 
 if __name__ == "__main__":
 
-    assembly_txt = open("assembly_file.txt")
+    assembly_txt = open("multiply_assembly_file.txt")
 
     instruction = input("Please enter the assembly instruction: ")
 

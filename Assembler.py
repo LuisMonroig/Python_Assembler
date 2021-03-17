@@ -1,14 +1,30 @@
+def get_tag_dict(tag_dict = dict()):
+    """Function that analyses an Intel 8080 assembly text file to extract tags and line number of the tag.
+       It adds to a dictionary given as inputs a key value pair where the key is the tag and the value is
+       the line number of the tag
+
+        Args:
+            tag_dict (dictionary): a dictionary of tags, could be empty
+
+        Returns: None
+        """
+    assembly_txt = open("multiply_assembly_file.txt")
+
+    counter = 0
+    for line in assembly_txt:
+        counter += 1
+        if ":" in line:
+            tag_dict[line.split(":")[0]] = counter
 
 #if ":" in line:
 #    return line.split(":")[0] # get_line_tag(line):
-
 regiters_8080 = {"A":1,"B":1, "C":1, "D":1, "E":1, "H":1, "I":1,"H":1,"L":1}
 
 regiters_8080 = {"A":,"B":, "C":, "D":, "E":, "H":, "I":,"H":,"L":}
 
 if __name__ == "__main__":
 
-    assembly_txt = open("multiply_assembly_file.txt")
+    #assembly_txt = open("multiply_assembly_file.txt")
 
     instruction = input("Please enter the assembly instruction: ")
 
@@ -50,6 +66,8 @@ if __name__ == "__main__":
             for index in range(3):
                 num_reg_binary[index] = zero_byte[0:8-len(num_reg_binary[index])] + num_reg_binary[index]
                 print(num_reg_binary[index])
+
+
 
             machine_code = computers_ISA[mnemonic] + num_reg_binary[0] + num_reg_binary[1] + num_reg_binary[2]
             print("The translation of the assembly instruction into machine code is:", machine_code,)
